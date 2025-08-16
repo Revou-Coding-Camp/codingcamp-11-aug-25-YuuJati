@@ -1,4 +1,4 @@
-// welcomeSpeech();
+welcomeSpeech();
 function welcomeSpeech() {
     let userName = prompt("Please enter your name:");
     if (userName !== '') {
