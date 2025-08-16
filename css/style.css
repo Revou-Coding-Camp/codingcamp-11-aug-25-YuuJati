@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 40px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+#home-page,
+#about-me,
+#my-experience,
+#message-us {
+  scroll-margin-top: 140px; 
+}
+
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    padding: 4px 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #2583ff; 
+}
+
+
+#welcome {
+  font-weight: bold;
+  background: linear-gradient(to right, #3b82f6, #9333ea); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+}
+
+#about {
+  font-weight: bold;
+  background: linear-gradient(to right, #10b981, #14b8a6); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+}
+
+#experience {
+  font-weight: bold;
+  background: linear-gradient(to right, #ec4899, #ef4444); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.4;
+}
+
+#message {
+  font-weight: bold;
+  background: linear-gradient(to right, #facc15, #f97316); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+}
+
+
+
+/* Background bintang */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background: #0a0a0a url('https://raw.githubusercontent.com/iamshaunjp/webgl-playlist/gh-pages/lesson-1/images/stars.png') repeat;
+    background-size: cover; 
+    animation: moveStars 100s linear infinite;
+    z-index: -1;
+    pointer-events: none; 
+}
+
+/* bintang jatuh */
+.shooting-star {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(-45deg, rgb(4, 184, 255), rgba(255, 255, 255, 0));
+    opacity: 0.8;
+    transform: rotate(45deg);
+    animation: shooting 1.5s ease-in-out forwards;
+    z-index: -1;
+}
+
+@keyframes moveStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateX(0) translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-500px) translateY(500px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+
+/* bintang berkedip */
+.twinkle-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none; 
+    z-index: -1;
+}
+
+.twinkle-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(0deg, rgb(217, 255, 4), rgb(255, 255, 255));
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+}
+
+
+
+/* buat footer */
+.footer {
+    background: rgba(255, 255, 255, 0.05);
+backdrop-filter: blur(2px);
+}
+
+.footer p {
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.8); /* text footer */
+}
+
+
+

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Wahyu jati</title>
+    <!-- CSS tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- CSS lagi (eksternal) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="text-white">
+    <!-- Buat bg bintang -->
+    <div class="stars"></div>
+    <div class="twinkle-stars"></div>
+
+    <header class="w-full bg-black/30 backdrop-blur-sm">
+        <div
+            class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-center md:justify-between gap-x-4 gap-y-2 p-4">
+            <a href="#home-page" class="flex items-center">
+                <!-- Logo permisalan tapi bikin sendiri -->
+                <img src="assets/odel.png" alt="Logo" class="h-14 w-14 sm:h-16 sm:w-16 md:h-24 md:w-24" logo-img">
+                <span class="sr-only">Home</span>
+            </a>
+
+            <!-- INI NAVBAR -->
+            <nav class="w-full sm:w-auto">
+                <ul id="menu" class="flex flex-wrap justify-center md:justify-end
+       text-sm sm:text-base md:text-lg font-semibold">
+                    <li>
+                        <a href="#home-page"
+                            class="px-3 py-1 rounded-lg border border-white/20 hover:border-blue-700 hover:text-blue-400 transition">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about-me"
+                            class="px-3 py-1 rounded-lg border border-white/20 hover:border-blue-600 hover:text-blue-400 transition">
+                            About Me
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#my-experience"
+                            class="px-3 py-1 rounded-lg border border-white/20 hover:border-blue-500 hover:text-blue-400 transition">
+                            Experience
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#message-us"
+                            class="px-3 py-1 rounded-lg border border-white/20 hover:border-blue-400 hover:text-blue-400 transition">
+                            Message Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <hr />
+
+    <!-- INI KONTENNYA -->
+    <!-- WELCOME SPEECH -->
+    <main class="pt-[120px]">
+        <section id="home-page" class="h-[400px] ">
+            <div class="flex flex-col items-center justify-center h-full">
+                <h1 id="welcome" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+                    Welcome <span id="user-greeting">User</span> to Portfolio Wahyu
+                </h1>
+                <p class="text-lg">Explore my projects and experiences</p>
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section id="about-me" class="min-h-[400px]">
+            <div class="flex flex-col items-center justify-start h-full text-center px-4">
+                <h2 id="about" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-lg max-w-3xl mx-auto">
+                    Saya adalah lulusan SMK dengan minat besar di bidang IT. Memiliki pengalaman bekerja dalam tim,
+                    disiplin, dan semangat belajar tinggi untuk terus mengembangkan kemampuan di dunia teknologi dan
+                    jaringan. Dan Sekarang saya sedang berusaha untuk belajar lebih dalam tentang Web Development,
+                    khususnya dalam pembuatan website menggunakan HTML, CSS, dan JavaScript. Sehingga mudah - mudahan
+                    saya bisa menghasilkan banyak karya yang bermanfaat bagi orang lain.
+                    Saya percaya bahwa dengan kerja keras dan dedikasi, saya dapat mencapai tujuan saya dalam industri
+                    IT.
+                </p>
+            </div>
+        </section>
+
+        <!-- PENGALAMAN -->
+        <section id="my-experience" class="min-h-[400px]">
+            <div class="flex flex-col items-center justify-start h-full text-center px-4">
+                <h2 id="experience" class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Experience</h2>
+                <ul class="list-disc list-inside text-lg max-w-3xl mx-auto space-y-3 text-left">
+                    <li>Magang selama 2 bulan di Hotel Aston Inn Cilacap sebagai Staff IT, bertugas melakukan pengecekan
+                        internet setiap hari.</li>
+                    <li>Praktek Kerja Lapangan (PKL) selama 6 bulan di PT. Telkom Cabang Cilacap, melaksanakan input
+                        data dan troubleshooting jaringan di rumah atau kantor pelanggan.</li>
+                    <li>Training Staff Bar di Cafe/Resto Route 66, Cilacap.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PESAN -->
+        <section id="message-us" class="min-h-[400px] flex items-center justify-center">
+            <div class="flex flex-col items-center text-center px-4">
+                <h2 id="message" class="text-3xl font-semibold mb-2">Message Us</h2>
+                <p class="text-lg mb-4">Silahkan Kirim Pesan dan Kesan yang Anda ingin sampaikan.</p>
+
+                <form class="flex flex-col gap-3 w-full max-w-sm">
+                    <input id="name" type="text" placeholder="Your Name"
+                        class="border p-2 rounded w-full bg-white/20 text-white placeholder-white" />
+                    <input id="email" type="email" placeholder="Your Email"
+                        class="border p-2 rounded w-full bg-white/20 text-white placeholder-white" />
+                    <textarea id="yourmessage" placeholder="Your Message"
+                        class="border p-2 rounded w-full h-28 resize-none bg-white/20 text-white placeholder-white"></textarea>
+                    <button type="button" onclick="sendMessage()"
+                        class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- INI FOOTERNYA -->
+    <footer class="footer">
+        <div class="text-center p-4">
+            <p>© 2025 Wahyu Jati. All rights reserved.</p>
+            <p>Made with ❤️ using HTML, CSS, and JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- Script Luar -->
+    <script src="js/script.js"></script>
+
+    <!-- Script untuk backgrounD bintang -->
+    <script src="js/background.js"></script>
+</body>
+
+</html>
