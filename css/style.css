@@ -1,102 +1,373 @@
+* {
+    margin: 0;
+}
+
 body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0a0a;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-header {
-    position: fixed; 
+
+/* THIS IS NAVBAR */
+nav{
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 40px;
+    padding-right: 40px;
     box-sizing: border-box;
     z-index: 100;
+    background: rgba(238, 231, 231, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-#home-page,
-#about-me,
-#my-experience,
-#message-us {
-  scroll-margin-top: 160px; 
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
 }
 
+nav li {
+    height: 50px;
+    margin-right: 20px;
+}
+
+nav ul li{
+    height:auto;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
 
 nav ul li a {
     color: rgb(255, 255, 255);
-    padding: 4px 8px;
-    border-radius: 8px;
+    padding: 0;
     text-decoration: none;
+    border-bottom: 2px solid transparent;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #2583ff; 
+    color: #2583ff;
+    border-bottom: 2px solid #2583ff;
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #2583ff;
+    color: #2583ff; /* opsional, kasih warna sama kayak hover */
 }
 
 
+/* THIS IS SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(129, 129, 129, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;   /* atur sesuai keinginan */
+    height: auto;   /* supaya tidak gepeng */
+    display: block;
+}
+
+.main {
+    padding-top: 120px;
+}
+
+/* HOME */
+.home-page {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.home-content p {
+    font-size: 1.125rem;
+}
+
+
+/* ABOUT ME */
+.about-me, .experience{
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.about-content, .experience-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-content h2, 
+.experience-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.about-content p,
+.experience-content ul {
+    font-size: 1.125rem;
+    font-weight: normal;  
+    color: white;          
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.experience-content ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    text-align: left;
+    max-width: 48rem;
+    margin-right: 1rem;
+    padding-left: 2rem;
+}
+
+.experience-content li {
+    margin-bottom: 0.75rem;
+}
+
+/* MESSAGE */
+.message{
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.message-content {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.message-content h2 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1.875rem;
+}
+
+.message-content p {
+    font-size: 1.125rem;
+    max-width: 48rem;
+    margin: 0 auto 1.5rem auto;
+}
+
+.message-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.message-content input,
+.message-content textarea{
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    resize: vertical;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.message-content input::placeholder,
+.message-content textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.message-content textarea{
+    height: 7rem;
+    resize: none;
+}
+.message-content button {
+    width: 100%;
+    max-width: 48rem;
+    display: block;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    background-color: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.message-content button:hover {
+    background-color: #1e40af;
+}
+
+.footer{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* JARAK KETIKA AUTO SCROLL */
+#home-page,
+#about-me,
+#my-experience,
+#message-us {
+    scroll-margin-top: 160px;
+}
+
+/* PEWARNAAN KALIMAT SUBJUDUL */
 #welcome {
-  font-weight: bold;
-  background: linear-gradient(to right, #3b82f6, #9333ea); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.5;
+    font-weight: bold;
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.5;
 }
 
 #about {
-  font-weight: bold;
-  background: linear-gradient(to right, #10b981, #14b8a6); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.5;
+    font-weight: bold;
+    background: linear-gradient(to right, #10b981, #14b8a6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.5;
 }
 
 #experience {
-  font-weight: bold;
-  background: linear-gradient(to right, #ec4899, #ef4444); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.4;
+    font-weight: bold;
+    background: linear-gradient(to right, #ec4899, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.4;
 }
 
 #message {
-  font-weight: bold;
-  background: linear-gradient(to right, #facc15, #f97316); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.5;
+    font-weight: bold;
+    background: linear-gradient(to right, #facc15, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.5;
 }
-
-
 
 /* Background bintang */
 .stars {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; 
+    width: 100vw;
     height: 100vh;
     background: #0a0a0a url('https://raw.githubusercontent.com/iamshaunjp/webgl-playlist/gh-pages/lesson-1/images/stars.png') repeat;
-    background-size: cover; 
+    background-size: cover;
     animation: moveStars 100s linear infinite;
     z-index: -1;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 /* bintang jatuh */
 .shooting-star {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     width: 2px;
@@ -108,28 +379,12 @@ nav ul li a:hover {
     z-index: -1;
 }
 
-@keyframes moveStars {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 5000px; }
-}
-
-@keyframes shooting {
-    0% {
-        transform: translateX(0) translateY(0) rotate(45deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-500px) translateY(500px) rotate(45deg);
-        opacity: 0;
-    }
-}
-
 
 /* bintang berkedip */
 .twinkle-stars {
     position: fixed;
     inset: 0;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: -1;
 }
 
@@ -143,23 +398,14 @@ nav ul li a:hover {
     animation: twinkle 2s infinite ease-in-out;
 }
 
-@keyframes twinkle {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 0.2; }
-}
-
-
-
 /* buat footer */
 .footer {
     background: rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 }
 
 .footer p {
     margin: 4px 0;
-    color: rgba(255, 255, 255, 0.8); /* text footer */
+    color: rgba(255, 255, 255, 0.8);
+    /* text footer */
 }
-
-
-
